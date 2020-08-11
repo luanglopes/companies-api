@@ -16,6 +16,12 @@
       ],
       "@config/*": [
         "config/*"
+      ],
+      "@interfaces/*": [
+        "interfaces/*"
+      ],
+      "@infra/*": [
+        "infra/*"
       ]
     },
     "esModuleInterop": true,
