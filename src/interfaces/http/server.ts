@@ -1,17 +1,20 @@
-import 'reflect-metadata'
 import { createServer } from 'http'
+import { injectable, inject } from 'tsyringe'
 
 import { IHttpApplication } from './IHttpApplication'
-import { HttpApplication as ExpressHttpApplication } from '@infra/express'
 
-interface IStartServerOptions {
+export interface IStartServerOptions {
   port: number
 }
 
-class HttpServer {
-  constructor (private httpApplication: IHttpApplication) { }
+@injectable()
+export class HttpServer {
+  constructor (
+    @inject('HttpApplication')
+    private httpApplication: IHttpApplication,
+  ) { }
 
-  public async start ({ port }: IStartServerOptions) {
+  public async start ({ port }: IStartServerOptions): Promise<void> {
     console.log('⚡ Starting http server...')
     try {
       await this.httpApplication.setup()
@@ -28,8 +31,3 @@ class HttpServer {
     }
   }
 }
-
-const expressHttpApplication = new ExpressHttpApplication()
-const server = new HttpServer(expressHttpApplication)
-
-server.start({ port: 3000 })

@@ -7,7 +7,7 @@
   "author": "Luan Lopes <luanglopes@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "tsnd -r tsconfig-paths/register --inspect --transpile-only --respawn --ignore-watch node_modules --no-notify src/interfaces/http/server.ts",
+    "dev": "tsnd -r tsconfig-paths/register --inspect --transpile-only --respawn --ignore-watch node_modules --no-notify src/shared/main.ts",
     "typeorm": "tsnd -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
   },
   "dependencies": {
@@ -17,6 +17,7 @@
     "helmet": "^4.0.0",
     "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
+    "tsyringe": "^4.3.0",
     "typeorm": "^0.2.25"
   },
   "devDependencies": {

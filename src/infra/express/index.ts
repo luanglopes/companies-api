@@ -1,3 +1,4 @@
+import { injectable, inject } from 'tsyringe'
 import { RequestListener } from 'http'
 import express, { Application } from 'express'
 import cors from 'cors'
@@ -5,15 +6,17 @@ import helmet from 'helmet'
 import 'express-async-errors'
 
 import { IHttpApplication } from '@interfaces/http/IHttpApplication'
-import { DatabaseSetup } from '@infra/typeorm'
+import { IDatabase } from '@domain/database/IDatabase'
 
+@injectable()
 export class HttpApplication implements IHttpApplication {
   private application: Application
-  private databaseSetup: DatabaseSetup
 
-  constructor () {
+  constructor (
+    @inject('Database')
+    private database: IDatabase,
+  ) {
     this.application = express()
-    this.databaseSetup = new DatabaseSetup()
   }
 
   public async setup (): Promise<void> {
@@ -27,7 +30,7 @@ export class HttpApplication implements IHttpApplication {
   }
 
   private async setupDatabase (): Promise<void> {
-    await this.databaseSetup.connect()
+    await this.database.connect()
   }
 
   private setupMiddlewares (): void {

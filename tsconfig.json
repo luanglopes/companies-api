@@ -22,6 +22,9 @@
       ],
       "@infra/*": [
         "infra/*"
+      ],
+      "@domain/*": [
+        "domain/*"
       ]
     },
     "esModuleInterop": true,

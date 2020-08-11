@@ -1,6 +1,7 @@
 import { createConnection, getConnectionOptions, EntitySchema, ConnectionOptions } from 'typeorm'
+import { IDatabase } from 'domain/database/IDatabase'
 
-export class DatabaseSetup {
+export class Database implements IDatabase {
   public async connect (): Promise<void> {
     const connOptions = await this.getNormalizedConnectionOptions()
 
