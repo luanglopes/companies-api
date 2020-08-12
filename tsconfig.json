@@ -25,6 +25,12 @@
       ],
       "@domain/*": [
         "domain/*"
+      ],
+      "@app/*": [
+        "app/*"
+      ],
+      "@shared/*": [
+        "shared/*"
       ]
     },
     "esModuleInterop": true,
