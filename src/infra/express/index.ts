@@ -7,6 +7,7 @@ import 'express-async-errors'
 
 import { IHttpApplication } from '@interfaces/http/IHttpApplication'
 import { IDatabase } from '@domain/database/IDatabase'
+import router from './routes'
 
 @injectable()
 export class HttpApplication implements IHttpApplication {
@@ -43,5 +44,7 @@ export class HttpApplication implements IHttpApplication {
     this.application.get('/health', (request, response) => {
       return response.json({ status: 'Running' })
     })
+
+    this.application.use(router)
   }
 }
