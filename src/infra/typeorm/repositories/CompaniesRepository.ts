@@ -2,6 +2,7 @@ import { Repository, getRepository } from 'typeorm'
 
 import { ICompaniesRepository } from '@domain/repositories/ICompaniesRepository'
 import { ICompany } from '@domain/entities/ICompany'
+import { IPagedResult } from '@domain/database/IPagedResult'
 import { Company } from '../entities/Company'
 
 export class CompaniesRepository implements ICompaniesRepository {
@@ -23,5 +24,11 @@ export class CompaniesRepository implements ICompaniesRepository {
     const company = await this.ormRepository.findOne({ cnpj })
 
     return company || undefined
+  }
+
+  public async list (): Promise<IPagedResult<ICompany>> {
+    const [list, count] = await this.ormRepository.findAndCount()
+
+    return { list, total: count }
   }
 }
