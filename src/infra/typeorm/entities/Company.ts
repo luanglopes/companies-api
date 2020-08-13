@@ -4,8 +4,8 @@ import { ICompany } from '@domain/entities/ICompany'
 
 @Entity({ name: 'companies' })
 export class Company implements ICompany {
-  @PrimaryGeneratedColumn({ type: 'uuid' })
-  id: string
+  @PrimaryGeneratedColumn()
+  id: number
 
   @Column()
   name: string
