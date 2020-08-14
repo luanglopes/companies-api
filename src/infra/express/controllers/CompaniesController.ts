@@ -22,4 +22,14 @@ export class CompaniesController {
 
     return response.json(result)
   }
+
+  public async delete (request: Request, response: Response): Promise<Response> {
+    const { id } = request.params
+
+    const companiesRepository = new CompaniesRepository()
+
+    await companiesRepository.delete(+id)
+
+    return response.sendStatus(204)
+  }
 }
