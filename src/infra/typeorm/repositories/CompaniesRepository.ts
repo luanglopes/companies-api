@@ -31,4 +31,8 @@ export class CompaniesRepository implements ICompaniesRepository {
 
     return { list, total: count }
   }
+
+  public async delete (id: number): Promise<void> {
+    await this.ormRepository.delete({ id })
+  }
 }
