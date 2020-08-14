@@ -2,7 +2,7 @@ import { injectable, inject } from 'tsyringe'
 
 import { ICompany } from '@database/entities/ICompany'
 import { ICompaniesRepository } from '@repositories/ICompaniesRepository'
-import { AppError } from '@errors/AppError'
+import { AppError } from '@interfaces/http/errors/AppError'
 
 interface IRequest {
   data: Omit<ICompany, 'id'>
@@ -19,7 +19,7 @@ export class CreateCompanyService {
     const companyWithCnpj = await this.companiesRepository.findByCnpj(data.cnpj)
 
     if (companyWithCnpj) {
-      throw new AppError('CNPJ already in use')
+      throw new AppError('CNPJ already in use', 'CNPJ_ALREADY_IN_USE')
     }
 
     const company = await this.companiesRepository.create(data)

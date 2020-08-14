@@ -8,6 +8,7 @@ import 'express-async-errors'
 import { IHttpApplication } from '@interfaces/http/IHttpApplication'
 import { IDatabase } from 'database/IDatabase'
 import appRouter from './routes'
+import { errorHandler } from './errorHandler'
 
 @injectable()
 export class HttpApplication implements IHttpApplication {
@@ -24,6 +25,7 @@ export class HttpApplication implements IHttpApplication {
     await this.setupDatabase()
     this.setupMiddlewares()
     this.setupRoutes()
+    this.setupErrorHandling()
   }
 
   public getHandler (): RequestListener {
@@ -41,10 +43,10 @@ export class HttpApplication implements IHttpApplication {
   }
 
   private setupRoutes (): void {
-    this.application.get('/health', (request, response) => {
-      return response.json({ status: 'Running' })
-    })
-
     this.application.use(appRouter.getRoutes())
+  }
+
+  private setupErrorHandling (): void {
+    this.application.use(errorHandler)
   }
 }

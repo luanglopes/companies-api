@@ -1,6 +1,6 @@
 import { FakeCompaniesRepository } from '@repositories/fakes/FakeCompaniesRepository'
 import { ICompany } from '@database/entities/ICompany'
-import { AppError } from '@errors/AppError'
+import { AppError } from '@interfaces/http/errors/AppError'
 import { CreateCompanyService } from './CreateCompanyService'
 
 describe('CreateCompanyService', () => {
