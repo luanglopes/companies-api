@@ -1,8 +1,8 @@
 import { injectable, inject } from 'tsyringe'
 
-import { ICompany } from '@domain/entities/ICompany'
-import { ICompaniesRepository } from '@domain/repositories/ICompaniesRepository'
-import { AppError } from '@shared/errors/AppError'
+import { ICompany } from '@database/entities/ICompany'
+import { ICompaniesRepository } from '@repositories/ICompaniesRepository'
+import { AppError } from '@errors/AppError'
 
 interface IRequest {
   data: Omit<ICompany, 'id'>

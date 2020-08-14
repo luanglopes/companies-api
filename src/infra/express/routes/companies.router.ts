@@ -1,13 +1,19 @@
 import { Router } from 'express'
 
 import { CompaniesController } from '../controllers/CompaniesController'
+import { handlerFactory } from '../handlerFactory'
+import { container } from 'tsyringe'
 
-const companiesRouter = Router()
+export default {
+  getRoutes (): Router {
+    const companiesRouter = Router()
 
-const companiesController = new CompaniesController()
+    const companiesController = container.resolve(CompaniesController)
 
-companiesRouter.post('/', companiesController.create)
-companiesRouter.get('/', companiesController.list)
-companiesRouter.delete('/:id', companiesController.delete)
+    companiesRouter.post('/', handlerFactory(companiesController, 'create'))
+    companiesRouter.get('/', handlerFactory(companiesController, 'list'))
+    companiesRouter.delete('/:id', handlerFactory(companiesController, 'delete'))
 
-export default companiesRouter
+    return companiesRouter
+  },
+}

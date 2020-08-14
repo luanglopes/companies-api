@@ -6,8 +6,8 @@ import helmet from 'helmet'
 import 'express-async-errors'
 
 import { IHttpApplication } from '@interfaces/http/IHttpApplication'
-import { IDatabase } from '@domain/database/IDatabase'
-import router from './routes'
+import { IDatabase } from 'database/IDatabase'
+import appRouter from './routes'
 
 @injectable()
 export class HttpApplication implements IHttpApplication {
@@ -45,6 +45,6 @@ export class HttpApplication implements IHttpApplication {
       return response.json({ status: 'Running' })
     })
 
-    this.application.use(router)
+    this.application.use(appRouter.getRoutes())
   }
 }

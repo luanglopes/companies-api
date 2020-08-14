@@ -1,5 +1,5 @@
-import { ICompany } from '@domain/entities/ICompany'
-import { IPagedResult } from '@domain/database/IPagedResult'
+import { ICompany } from 'database/entities/ICompany'
+import { IPagedResult } from 'database/IPagedResult'
 
 export interface ICompaniesRepository {
   create(companyData: Omit<ICompany, 'id'>): Promise<ICompany>

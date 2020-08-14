@@ -1,8 +1,8 @@
 import { Repository, getRepository } from 'typeorm'
 
-import { ICompaniesRepository } from '@domain/repositories/ICompaniesRepository'
-import { ICompany } from '@domain/entities/ICompany'
-import { IPagedResult } from '@domain/database/IPagedResult'
+import { ICompaniesRepository } from 'repositories/ICompaniesRepository'
+import { ICompany } from 'database/entities/ICompany'
+import { IPagedResult } from 'database/IPagedResult'
 import { Company } from '../entities/Company'
 
 export class CompaniesRepository implements ICompaniesRepository {

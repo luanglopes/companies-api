@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
 
-import { ICompany } from '@domain/entities/ICompany'
+import { ICompany } from 'database/entities/ICompany'
 
 @Entity({ name: 'companies' })
 export class Company implements ICompany {

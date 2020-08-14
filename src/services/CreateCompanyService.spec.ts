@@ -1,7 +1,7 @@
-import { FakeCompaniesRepository } from '@domain/repositories/fakes/FakeCompaniesRepository'
+import { FakeCompaniesRepository } from '@repositories/fakes/FakeCompaniesRepository'
+import { ICompany } from '@database/entities/ICompany'
+import { AppError } from '@errors/AppError'
 import { CreateCompanyService } from './CreateCompanyService'
-import { ICompany } from '@domain/entities/ICompany'
-import { AppError } from '@shared/errors/AppError'
 
 describe('CreateCompanyService', () => {
   let fakeCompaniesRepository: FakeCompaniesRepository

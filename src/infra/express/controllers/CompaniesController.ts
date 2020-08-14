@@ -1,10 +1,16 @@
 import { Request, Response } from 'express'
-import { container } from 'tsyringe'
+import { container, injectable, inject } from 'tsyringe'
 
-import { CreateCompanyService } from '@app/services/CreateCompanyService'
-import { CompaniesRepository } from '@infra/typeorm/repositories/CompaniesRepository'
+import { CreateCompanyService } from '@services/CreateCompanyService'
+import { ICompaniesRepository } from 'repositories/ICompaniesRepository'
 
+@injectable()
 export class CompaniesController {
+  constructor (
+    @inject('CompaniesRepository')
+    private companiesRepository: ICompaniesRepository,
+  ) {}
+
   public async create (request: Request, response: Response): Promise<Response> {
     const data = request.body
 
@@ -16,9 +22,7 @@ export class CompaniesController {
   }
 
   public async list (request: Request, response: Response): Promise<Response> {
-    const companiesRepository = new CompaniesRepository()
-
-    const result = await companiesRepository.list()
+    const result = await this.companiesRepository.list()
 
     return response.json(result)
   }
@@ -26,9 +30,7 @@ export class CompaniesController {
   public async delete (request: Request, response: Response): Promise<Response> {
     const { id } = request.params
 
-    const companiesRepository = new CompaniesRepository()
-
-    await companiesRepository.delete(+id)
+    await this.companiesRepository.delete(+id)
 
     return response.sendStatus(204)
   }

@@ -14,23 +14,20 @@
       "@services/*": [
         "services/*"
       ],
-      "@config/*": [
-        "config/*"
+      "@database/*": [
+        "database/*"
+      ],
+      "@repositories/*": [
+        "repositories/*"
+      ],
+      "@errors/*": [
+        "errors/*"
       ],
       "@interfaces/*": [
         "interfaces/*"
       ],
       "@infra/*": [
         "infra/*"
-      ],
-      "@domain/*": [
-        "domain/*"
-      ],
-      "@app/*": [
-        "app/*"
-      ],
-      "@shared/*": [
-        "shared/*"
       ]
     },
     "esModuleInterop": true,

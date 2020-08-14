@@ -2,8 +2,12 @@ import { Router } from 'express'
 
 import companiesRouter from './companies.router'
 
-const router = Router()
+export default {
+  getRoutes (): Router {
+    const router = Router()
 
-router.use('/companies', companiesRouter)
+    router.use('/companies', companiesRouter.getRoutes())
 
-export default router
+    return router
+  },
+}

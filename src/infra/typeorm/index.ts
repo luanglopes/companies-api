@@ -1,5 +1,5 @@
 import { createConnection, getConnectionOptions, EntitySchema, ConnectionOptions } from 'typeorm'
-import { IDatabase } from 'domain/database/IDatabase'
+import { IDatabase } from 'database/IDatabase'
 
 export class Database implements IDatabase {
   public async connect (): Promise<void> {
