@@ -6,7 +6,7 @@ import helmet from 'helmet'
 import 'express-async-errors'
 
 import { IHttpApplication } from '@interfaces/http/IHttpApplication'
-import { IDatabase } from 'database/IDatabase'
+import { IDatabase } from '@database/IDatabase'
 import appRouter from './routes'
 import { errorHandler } from './errorHandler'
 
