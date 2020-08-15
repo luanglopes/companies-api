@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import { container, injectable, inject } from 'tsyringe'
 
 import { CreateCompanyService } from '@services/CreateCompanyService'
-import { ICompaniesRepository } from 'repositories/ICompaniesRepository'
+import { ICompaniesRepository } from '@repositories/ICompaniesRepository'
 
 @injectable()
 export class CompaniesController {
