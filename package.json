@@ -8,8 +8,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsnd -r tsconfig-paths/register --inspect --transpile-only --respawn --ignore-watch node_modules --no-notify src/main.ts",
+    "dev:docker": "docker-compose start && docker-compose logs --tail=10 -f companies-api",
     "typeorm": "tsnd -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
-    "test": "jest"
+    "test": "jest",
+    "setup:docker": "docker-compose up --build -d"
   },
   "dependencies": {
     "celebrate": "^12.2.0",

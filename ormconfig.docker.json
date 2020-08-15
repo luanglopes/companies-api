@@ -1,0 +1,14 @@
+{
+  "name": "default",
+  "type": "mysql",
+  "host": "companies-api-db",
+  "port": 3306,
+  "username": "root",
+  "password": "root",
+  "database": "companies-api",
+  "entities": ["./src/infra/typeorm/entities/*.ts"],
+  "migrations": ["./src/infra/typeorm/migrations/*.ts"],
+  "cli": {
+    "migrationsDir": "./src/infra/typeorm/migrations"
+  }
+}
