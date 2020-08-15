@@ -108,3 +108,6 @@ dist
 
 # TypeORM config
 ormconfig.json
+
+# lock files
+package-lock.json
