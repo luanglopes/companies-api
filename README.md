@@ -18,7 +18,7 @@ Para executar a aplicação em desenvolvimento siga os passos abaixo:
 1. Clone o repositório utilizando o comando `git clone https://github.com/luanglopes/companies-api.git`
 2. Na raiz do projeto execute `yarn install` (ou `npm install` caso esteja utilizando npm) para instalar as dependências
 3. Crie um arquivo `ormconfig.json` seguindo o modelo do `ormconfig.example.json` com suas configurações de banco de dados
-4. Execute o comando `yarn typeorm migration:run` (ou `npm run typeorm migration:run`) para executar as migrações e criara a estrutura do banco de dados
+4. Execute o comando `yarn typeorm migration:run` (ou `npm run typeorm migration:run`) para executar as migrações e criar a estrutura do banco de dados
     - Certifique-se que o banco de dados está rodando e accessível
 5. Acesse a aplicação em http://localhost:3000
 
@@ -28,7 +28,7 @@ Você pode executar o ambiente de desenvolvimento utilizando docker, assim não 
 
 1. Clone o repositório utilizando o comando `git clone https://github.com/luanglopes/companies-api.git`
 2. Na raiz do projeto execute `yarn install` (ou `npm install` caso esteja utilizando npm) para instalar as dependências
-3. Execute o comando `yarn setup:docker` (ou `npm run setup:docker`), isso irá criar os containers
+3. Execute o comando `yarn setup:docker` (ou `npm run setup:docker`), isso irá criar o ambiente de desenvolvimento
 4. Execute o comando `yarn dev:docker` esse comando ira iniciar o containers, caso não estejam ativos, e mostrar os logs da aplicação no terminal
 5. Acesse a aplicação em http://localhost:3000
 
