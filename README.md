@@ -13,7 +13,7 @@ API para cadastro busca e exclusão de empresas
 
 Para executar a aplicação em desenvolvimento siga os passos abaixo:
 
-> A aplicação foi desenvolvida utilizando o `yarn` e todos os guias utilizam ele para exemplos e comandos
+> A aplicação foi desenvolvida utilizando o `yarn` e todos os guias utilizam ele para exemplos e comandos. Recomendo a utilização do `yarn` para setup, desenvolvimento, build e execução da aplicação
 
 1. Clone o repositório utilizando o comando `git clone https://github.com/luanglopes/companies-api.git`
 2. Na raiz do projeto execute `yarn install` (ou `npm install` caso esteja utilizando npm) para instalar as dependências
