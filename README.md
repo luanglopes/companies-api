@@ -38,6 +38,8 @@ Você pode executar o ambiente de desenvolvimento utilizando docker, assim não 
 
 A aplicação possui os seguintes comandos no `package.json` para serem executados:
 
+> Os comandos podem ser executados utilizando o `yarn <comando>` ou `npm run <comando>`
+
 - `dev`: Sobe o servidor de aplicação em modo de desenvolvimento
 - `dev:docker`: Sobe o ambiente de desenvolvimento utilizando o docker (aplicação + banco de dados)
 - `typeorm`: Utilizado para compatibilidade com TypeScript ao executar comandos do TypeORM
