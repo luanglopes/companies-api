@@ -1,7 +1,7 @@
 {
   "name": "companies-api",
   "version": "1.0.0",
-  "description": "API para cadastro busca e exclusão de empresas",
+  "description": "API para cadastro, busca e exclusão de empresas",
   "main": "src/server.ts",
   "repository": "git@github.com:luanglopes/companies-api.git",
   "author": "Luan Lopes <luanglopes@gmail.com>",
