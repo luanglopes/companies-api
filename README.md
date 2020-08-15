@@ -37,7 +37,7 @@ Você pode executar o ambiente de desenvolvimento utilizando docker, assim não 
 
 # Build
 
-Para executar a aplicação em produção com NodeJS é necessário transpilar o código para JavaScript. Para isso a aplicação vem com dois scripts, um para transpilar o código e outro para executar o código transpilado com node. Para executar a aplicação em produção:
+Para executar a aplicação em produção com NodeJS é necessário transpilar o código para JavaScript. Para isso a aplicação vem com dois scripts, um para transpilar o código e outro para executar o código transpilado com o NodeJS. Para executar a aplicação em produção:
 
 1. Clone o repositório utilizando o comando `git clone https://github.com/luanglopes/companies-api.git`
 2. Na raiz do projeto execute `yarn install` (ou `npm install` caso esteja utilizando npm) para instalar as dependências
