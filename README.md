@@ -61,3 +61,9 @@ A aplicação possui os seguintes comandos no `package.json` para serem executad
 - `setup:docker`: Faz o build dos containers do docker utilizando a configuração do arquivo `docker-compose.yml`
 - `build`: Executa a transpilação do código TypeScript para JavaScript para ser executado em produção, o resultado fica na pasta `dist`
 - `start`: Executa a aplicação transpilada pelo comando build (Recomendado para produção)
+
+# Rotas da Aplicação
+
+Na raiz do projeto existe um arquivo `insomnia_collection.json`, que é um arquivo exportado pela aplicação insomnia, com as rotas disponíveis na API. Para utilizar este arquivo basta instalar a aplicação do insomnia e importar o arquivo para dentro dele.
+
+- [Download Insomnia](https://insomnia.rest/download/) (selecione o Insomnia Core)
